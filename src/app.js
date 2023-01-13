@@ -54,6 +54,7 @@ function displayTemperature(response) {
   dayElement.innerHTML = formatDate(currentTime);
 }
 let apiKey = "atc33fee61a9abfa8d3110b6abo544a9";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Madrid&key=atc33fee61a9abfa8d3110b6abo544a9&units=metric`;
+let query = "Madrid";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query={Madrid}&key={atc33fee61a9abfa8d3110b6abo544a9}`;
 
 axios.get(apiUrl).then(displayTemperature);
