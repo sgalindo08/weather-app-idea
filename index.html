@@ -25,13 +25,13 @@
                 <h2>Monday, January 7th, 2023</h2>
               </div>
               <div class="col-6">
-                <h3>New York</h3>
+                <h3 id="city"></h3>
               </div>
             </div>
             <ul>
-              <li>Cloudy</li>
-              <li>Humidity: 72%</li>
-              <li>Wind: 8 k/m</li>
+              <li id="description">Cloudy</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> Km/H</li>
             </ul>
           </div>
           <div class="d-block ml-4">
@@ -42,7 +42,7 @@
                 width="60"
               />
               <div class="d-flex flex-row-leftt">
-                <strong>12</strong
+                <strong id="current"></strong
                 ><span class="units">°C | <a href="#">°F</a></span>
               </div>
             </div>
@@ -55,5 +55,6 @@
         </footer>
       </div>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
