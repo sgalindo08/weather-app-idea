@@ -10,39 +10,42 @@
       crossorigin="anonymous"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <h1>12:30</h1>
-          <h2>Date</h2>
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-6">
+            <h1>12:30</h1>
+            <h2>Monday, January 7th, 2023</h2>
+          </div>
+          <div class="col-6">
+            <h3>New York</h3>
+          </div>
         </div>
-        <div class="col-6">
-          <h3>New York</h3>
+        <ul>
+          <li>Cloudy</li>
+          <li>Humidity: 72%</li>
+          <li>Wind: 8 k/m</li>
+        </ul>
+        <div class="d-block ml-4">
+          <div class="d-flex flex-row">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+              alt="CLoudy"
+              width="60"
+            />
+            12°C | °F
+          </div>
         </div>
+        <footer>
+          <a href="https://github.com/sgalindo08/weather-search-hw"
+            >Open-source code</a
+          >, by Stacy Galindo
+        </footer>
       </div>
-      <ul>
-        <li>Cloudy</li>
-        <li>Humidity: 72%</li>
-        <li>Wind: 8 k/m</li>
-      </ul>
-      <div class="d-block ml-4">
-        <div class="d-flex flex-row">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-            alt="CLoudy"
-            width="60"
-          />
-          12°C | °F
-        </div>
-      </div>
-      <footer>
-        <a href="https://github.com/sgalindo08/weather-search-hw"
-          >Open-source code</a
-        >, by Stacy Galindo
-      </footer>
     </div>
   </body>
 </html>
