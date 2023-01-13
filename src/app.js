@@ -37,7 +37,6 @@ function formatDate(date) {
   return `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
 }
 function displayTemperature(response) {
-  console.log(response.data);
   let currentElement = document.querySelector("#current");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
