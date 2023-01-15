@@ -44,6 +44,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let clockElement = document.querySelector("#clock");
   let dayElement = document.querySelector("#day");
+  let iconElement = document.querySelector("#icon");
   let currentTime = new Date();
   currentElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
@@ -52,9 +53,14 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   clockElement.innerHTML = formatTime(response.data.time * 1000);
   dayElement.innerHTML = formatDate(currentTime);
+  iconElement.setAttribute(
+    "src",
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
-let apiKey = "atc33fee61a9abfa8d3110b6abo544a9";
+let apiKey = "bd79ao40tde3dec118ca46bc3e6dd55f";
 let query = "Madrid";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query={Madrid}&key={atc33fee61a9abfa8d3110b6abo544a9}`;
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}`;
 
 axios.get(apiUrl).then(displayTemperature);
