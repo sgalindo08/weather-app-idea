@@ -14,7 +14,6 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-
   let months = [
     "January",
     "February",
@@ -29,7 +28,6 @@ function formatDate(date) {
     "November",
     "December",
   ];
-
   let currentYear = date.getFullYear();
   let currentDay = days[date.getDay()];
   let currentMonth = months[date.getMonth()];
@@ -46,7 +44,10 @@ function displayTemperature(response) {
   let dayElement = document.querySelector("#day");
   let iconElement = document.querySelector("#icon");
   let currentTime = new Date();
-  currentElement.innerHTML = Math.round(response.data.temperature.current);
+
+  celsiusTemperature = response.data.temperature.current;
+
+  currentElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
@@ -69,7 +70,30 @@ function handleSubmit(event) {
   let queryInputElement = document.querySelector("#query-input");
   search(queryInputElement.value);
 }
-search("Madrid");
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let currentElement = document.querySelector("#current");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  currentElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let currentElement = document.querySelector("#current");
+  currentElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Madrid");
