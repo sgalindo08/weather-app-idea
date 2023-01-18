@@ -96,7 +96,7 @@ function displayTemperature(response) {
   dayElement.innerHTML = formatDate(currentTime);
   iconElement.setAttribute(
     "src",
-    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition[0].icon}.png`
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
 
