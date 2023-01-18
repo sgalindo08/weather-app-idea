@@ -2,7 +2,7 @@ function formatTime(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
-    hours = `0${minutes}`;
+    hours = `0${hours}`;
   }
 
   let minutes = date.getMinutes();
@@ -43,18 +43,18 @@ function formatDate(date) {
 }
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data.daily);
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay) {
+  forecast.forEach(function (forecastDay, index) {
     forecastHTML =
       forecastHTML +
       `
     <div class="col-2">
       <div class="weather-forecast-date">${forecastDay.time}</div>
       <img
-        src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay[0].condition.icon}.png"
+       src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
         alt=""
         width="42"
       />
@@ -96,7 +96,7 @@ function displayTemperature(response) {
   dayElement.innerHTML = formatDate(currentTime);
   iconElement.setAttribute(
     "src",
-    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
 
@@ -115,6 +115,7 @@ function handleSubmit(event) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let currentElement = document.querySelector("#current");
+
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
