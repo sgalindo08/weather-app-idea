@@ -3,20 +3,20 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 h1 {
-  color: black;
-  font-size: 35px;
+  color: white;
+  font-size: 40px;
   font-weight: 435;
   line-height: 28px;
 }
 h2 {
-  color: black;
-  font-size: 16px;
+  color: white;
+  font-size: 18px;
   font-weight: 445;
   line-height: 25px;
 }
 h3 {
-  color: black;
-  font-size: 27px;
+  color: white;
+  font-size: 35px;
   font-weight: 435;
   line-height: 28px;
   text-align: right;
@@ -27,14 +27,23 @@ ul {
 }
 li {
   list-style: none;
-  color: black;
-  font-size: 17px;
+  color: white;
+  font-size: 18px;
   font-weight: 445;
-  line-height: 40px;
+  line-height: 45px;
   text-transform: capitalize;
 }
+.container{
+  border-radius: 20px;
+}
+small {
+  color: white;
+}
 .weather-app-wrapper {
-  max-width: 600px;
+  background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/062/192/original/weather-background.jpeg?1673378315)
+    center/cover;
+    border-radius: 20px;
+  max-width: 800px;
   margin: 30px auto;
 }
 .weather-app {
@@ -46,40 +55,41 @@ li {
   margin-bottom: 20px;
 }
 .weather-temperature img {
-  margin-right: 5px;
-  height: 90px;
-  width: 90px;
+  margin-right: -14px;
+  height: 130px;
+  width: 130px;
 }
 .weather-temperature strong {
-  color: black;
-  font-size: 45px;
-  line-height: 85px;
+  color: white;
+  font-size: 50px;
+  line-height: 130px;
   font-weight: 400;
 }
 .weather-temperature .units {
   position: relative;
-  font-size: 16px;
-  top: 22px;
-}
-.weather-temperature .active {
-  color: black;
-  cursor: default;
-}
-.weather-temperature .active:hover {
-  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  top: 42px;
 }
 .weather-forecast {
-  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 10px;
   text-align: center;
-  color: #000;
+  color: white;
+  margin: bottom 50%;
 }
 .weather-forecast-date {
+  color: black;
   font-size: 16px;
-  opacity: 0.5;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 13px;
 }
 .weather-forecast-temperature-min {
-  opacity: 0.5;
+  opacity: 0.7;
+  font-size: 17px;
 }
 .weather-forecast-temperatures {
-  font-size: 13px;
+  color: white;
+  font-size: 17px;
 }

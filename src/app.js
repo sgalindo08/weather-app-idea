@@ -66,7 +66,7 @@ function displayForecast(response) {
          forecastDay.condition.icon
        }.png"
         alt=""
-        width="42"
+        width="80"
       />
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max"> ${Math.round(
@@ -100,6 +100,7 @@ function displayTemperature(response) {
   let currentTime = new Date();
 
   celsiusTemperature = response.data.temperature.current;
+  console.log(response.data)
 
   currentElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.city;
@@ -129,4 +130,4 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Madrid");
+search("Maine");
