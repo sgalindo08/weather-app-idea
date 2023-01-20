@@ -33,6 +33,14 @@ li {
   line-height: 45px;
   text-transform: capitalize;
 }
+a {
+  color: #e39280;
+  text-decoration: underline;
+}
+a:hover {
+  cursor: pointer;
+  color: #e39280;
+}
 .container {
   border-radius: 20px;
 }
